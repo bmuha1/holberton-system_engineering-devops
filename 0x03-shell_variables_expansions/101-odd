@@ -1,2 +1,2 @@
 #!/bin/bash
-sed 'n; d'
+paste - - | cut -f 1
