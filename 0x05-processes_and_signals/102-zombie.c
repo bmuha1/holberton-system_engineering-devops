@@ -24,24 +24,18 @@ int infinite_while(void)
  */
 int main(void)
 {
-	pid_t child1 = fork();
-	pid_t child2 = fork();
-	pid_t child3 = fork();
-	pid_t child4 = fork();
-	pid_t child5 = fork();
+	int i;
+	pid_t child;
 
-	if (child1 > 0 && child2 > 0 && child3 > 0 && child4 > 0 &&
-	    child5 > 0)
+	for (i = 0; i < 5; i++)
 	{
-		printf("Zombie process created, PID: %d\n", child1);
-		printf("Zombie process created, PID: %d\n", child2);
-		printf("Zombie process created, PID: %d\n", child3);
-		printf("Zombie process created, PID: %d\n", child4);
-		printf("Zombie process created, PID: %d\n", child5);
-		infinite_while();
+		child = fork();
+		if (child > 0)
+			printf("Zombie process created, PID: %d\n", child);
+		else
+			exit(0);
 	}
-	else
-		exit(0);
 
+	infinite_while();
 	return (0);
 }
