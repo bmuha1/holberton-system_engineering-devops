@@ -15,7 +15,7 @@ What you should learn from this project:
 
 
 ### [1. Install nginx web server](./1-install_nginx_web_server)
-* 
+* Install nginx on your web-01 server.
 
 
 ### [2. Setup a domain name](./2-setup_a_domain_name)
@@ -23,7 +23,7 @@ What you should learn from this project:
 
 
 ### [3. Redirection](./3-redirection)
-* Readme:
+* Configure your Nginx server so that /redirect_me is redirecting to another page.
 
 
 ### [4. Not found page 404](./4-not_found_page_404)
@@ -31,7 +31,7 @@ What you should learn from this project:
 
 
 ### [5. Design a beautiful 404 page](./5-design_a_beautiful_404_page)
-* Some of my favorites:
+* Get creative and impress us!
 
 
 ### [6. Install Nginx web server (w/ Puppet)](./7-puppet_install_nginx_web_server.pp)
