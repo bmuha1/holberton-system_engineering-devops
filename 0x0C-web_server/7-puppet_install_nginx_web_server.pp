@@ -3,7 +3,7 @@ package { 'nginx':
   ensure => installed,
 }
 
-file { '/var/www/html/index.nginx-debian.html':
+file { '/var/www/html/index.html':
   content => 'Holberton School for the win!',
 }
 
