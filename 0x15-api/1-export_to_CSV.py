@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-For a given employee ID, return information about TODO list progress
+For a given employee ID, export to CSV information about TODO list progress
 """
 
 if __name__ == '__main__':
