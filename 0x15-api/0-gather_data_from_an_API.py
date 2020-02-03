@@ -15,14 +15,12 @@ if __name__ == '__main__':
                      format(argv[1]))
     data = r.json()
     done = total = 0
-
     for task in data:
         total += 1
         if task.get('completed'):
             done += 1
 
     print('Employee {} is done with tasks({}/{}):'.format(name, done, total))
-
     for task in data:
         if task.get('completed'):
-            print('\t{}'.format(task.get('title')))
+            print('\t {}'.format(task.get('title')))
