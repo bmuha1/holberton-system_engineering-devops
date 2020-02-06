@@ -16,7 +16,7 @@ def count_words(subreddit, word_list, hot_list=[], after=''):
         if after is None:
             dict = {}
             for word in word_list:
-                dict[word] = str(hot_list).count(word)
+                dict[word] = str(hot_list).lower().count(word)
             for word in sorted(dict, key=dict.get, reverse=True):
                 if dict[word]:
                     print('{}: {}'.format(word, dict[word]))
