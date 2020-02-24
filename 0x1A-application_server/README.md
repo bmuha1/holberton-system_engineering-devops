@@ -34,13 +34,15 @@ What you should learn from this project:
 
 
 ### [7. No service interruption](./4-reload_gunicorn_no_downtime)
-* One of the most important metrics for any Internet-based business is its uptime. It is the percentage of the time over a given period that the service/product is accessible to customers. Let’s pick the example of Amazon.com, for every minute of downtime (which is the opposite of uptime), it costs the company $2M. Yet, application servers often need to restart to update with the new version of the code or new configuration, when doing this operation, an application server cannot serve traffic, which meant downtime.
+One of the most important metrics for any Internet-based business is its uptime. It is the percentage of the time over a given period that the service/product is accessible to customers. Let’s pick the example of Amazon.com, for every minute of downtime (which is the opposite of uptime), it costs the company $2M. Yet, application servers often need to restart to update with the new version of the code or new configuration, when doing this operation, an application server cannot serve traffic, which meant downtime.
 
 To avoid this; application servers are designed with a master/workers infrastructure. The master is in charge of:
 
-Receiving requests
-Managing workers (starting, stopping)
-Distributing requests to workers
+* Receiving requests
+* Managing workers (starting, stopping)
+* Distributing requests to workers
+
+
 Workers are the actual ones processing the query by generation dynamic content by processing the application code.
 
 To update an application without downtime, the master will proceed with a progressive rollout of the update. It will gracefully shut down some workers ( meaning that it will tell workers to finish processing the request they are working on, but will not send them new requests, once the worker is done, it’s will be shutdown) and start new ones with the new application code or configuration, then move on to the other old workers until it has renewed the whole pool.
