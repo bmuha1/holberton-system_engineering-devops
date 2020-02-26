@@ -22,7 +22,6 @@ location /airbnb-dynamic/number_odd_or_even/ { proxy_pass http://0.0.0.0:5001/nu
 location /api/ { proxy_pass http://0.0.0.0:5002; }
 location / { proxy_pass http://127.0.0.1:5003/2-hbnb; }
 location /static { root /home/ubuntu/AirBnB_clone_v4/web_dynamic/; }
-location /static { }
 add_header X-Served-By 800-web-01;
 error_page 404 /custom_404.html; location = /custom_404.html { root /usr/share/nginx/html; internal; }
 rewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;
