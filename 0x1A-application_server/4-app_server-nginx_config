@@ -18,7 +18,7 @@ server {
         listen [::]:80 default_server ipv6only=on;
 location /hbnb_static/ { alias /data/web_static/current/; }
 location /airbnb-onepage/ { proxy_pass http://0.0.0.0:5000; }
-location /airbnb-dynamic/number_odd_or_even/ { proxy_pass http://0.0.0.0:5001/number_odd_or_even/; }
+location ~ ^/airbnb-dynamic/number_odd_or_even/(\d+)$ { proxy_pass http://0.0.0.0:5001/number_odd_or_even/$1; }
 location /api/ { proxy_pass http://0.0.0.0:5002; }
 add_header X-Served-By 800-web-01;
 error_page 404 /custom_404.html; location = /custom_404.html { root /usr/share/nginx/html; internal; }
